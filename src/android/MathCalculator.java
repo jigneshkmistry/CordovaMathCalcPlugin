@@ -26,11 +26,11 @@ public class MathCalculator extends CordovaPlugin {
 
         if (args != null) {
             try {
-                int p1 = Integer.parseInt(args.JSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.JSONObject(0).getString("param2"));
-                callbackContext.success(message);
+                int p1 = Integer.parseInt(args.getJSONObject(0).getString("param1"));
+                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
+                callbackContext.success("" + (p1 + p2));
             } catch (Exception ex) {
-                callbackContext.error("" + (p1 + p2));
+                callbackContext.error("" + ex);
             }
         } else {
             callbackContext.error("Expected one non-empty string argument.");
