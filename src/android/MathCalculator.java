@@ -30,7 +30,7 @@ public class MathCalculator extends CordovaPlugin {
                 int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
                 callbackContext.success("" + (p1 + p2));
             } catch (Exception ex) {
-                callbackContext.error("" + ex);
+                callbackContext.error("Something went wrong" + ex);
             }
         } else {
             callbackContext.error("Expected one non-empty string argument.");
